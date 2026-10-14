@@ -1,0 +1,18 @@
+// ============================================================================
+// File: prog_jump.mem
+// ============================================================================
+601 // Addr 0:  LDI R0, 1        (R0 = 1)
+A04 // Addr 1:  JMP 4            (Branch to Addr 4, flush Addr 2,3)
+60F // Addr 2:  LDI R0, 15       (Skipped)
+60F // Addr 3:  LDI R0, 15       (Skipped)
+647 // Addr 4:  LDI R1, 7        (R1 = 7)
+150 // Addr 5:  SUB R1, R1       (R1 = 0, sets Z = 1)
+B09 // Addr 6:  JZ 9             (Taken because Z=1 -> Branch to Addr 9)
+68F // Addr 7:  LDI R2, 15       (Skipped)
+68F // Addr 8:  LDI R2, 15       (Skipped)
+6C2 // Addr 9:  LDI R3, 2        (R3 = 2)
+0F0 // Addr 10: ADD R3, R3       (R3 = 4, clears Z = 0)
+B0E // Addr 11: JZ 14            (Not taken because Z=0 -> Fall through)
+686 // Addr 12: LDI R2, 6        (R2 = 6)
+A0D // Addr 13: JMP 13           (Infinite loop, stops PC at 13)
+68F // Addr 14: LDI R2, 15       (Never reached)
