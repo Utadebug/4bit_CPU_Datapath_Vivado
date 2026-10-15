@@ -1,6 +1,7 @@
 # 4bit_CPU_Datapath_Vivado
 
 A synthesizable 4-bit RISC CPU core featuring a 3-stage instruction pipeline (IF – ID – EX) implemented in Verilog HDL and verified on AMD Vivado.
+
 <img width="482" height="251" alt="Screenshot 2026-10-15 095827" src="https://github.com/user-attachments/assets/34b53f95-5be4-4fff-8bb7-d80d0c2ecf12" />
 
 
